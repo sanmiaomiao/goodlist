@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>goodlist展示</title>
+		<script src="goodlist.js"></script>
+		<link href="goodlist.css" rel="stylesheet" />
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#box{
+				width: 500px;
+				min-height: 500px;
+				border: 1px solid red;
+				margin: 50px auto;
+			}
+		</style>
+	</head>
+	<body>
+		<div id='box'>
+			
+		</div>
+	</body>
+	<script>
+		/**
+		 * 1.放哪里
+		 * 2.显示啥
+		 * 3.数据
+		 */
+		var itemcallback=function(a){//点击商品的回调函数
+			console.log(a)
+		};
+		var starcallback=function(b){//点击收藏的回调函数
+			console.log(b)
+		}
+		new GoodList({
+			el:'#box',//包裹goodlist的外层div
+			data:[//所有要展示的数据(以下数据的key值不可改变)
+				{"iid":"1mna5cw",//商品id
+				"img":"https://s5.mogucdn.com/mlcdn/c45406/191104_8a6h9ai6dce1d498j4bdf2b59l2h2_800x800.jpg_320x999.jpg",//商品图片
+				"title":"半高领毛衣女花色仿水貂绒针织衫加厚保暖打底衫女","type":2,"cparam":"MTU3NDc3MTQxOF8xaHI2dHQ2X2JiOWExNzgzZjEwMThhOGU2MWFhZDBkODdiYWFlMzFjXzE2XzBfNTQxMTEwMjgyXzRlOGZfMF8xXzBfMTA0XzFfMF9ycy01MDAxOS5ydC0wLnd0LTA=",
+				//商品名称
+				"cfav":802,//收藏人数
+				"price":"￥79",//商品价格
+				},
+				{
+				"iid":"1mmcmxs",
+				"img":"https://s5.mogucdn.com/mlcdn/c45406/191020_23i87060553a5biajad8cjh0bia7h_750x1000.jpg_320x999.jpg",
+				"title":"2019新款宽松水貂绒高领毛衣女秋冬慵懒套头加厚雪尼尔针织衫",
+				"cfav":720,
+				"price":"￥59.9",
+				},
+				{
+				"iid":"1mkeqii",
+				"img":"https://s5.mogucdn.com/mlcdn/c45406/190825_6f8dh810jef2jjikl33bag27edb75_640x960.jpg_320x999.jpg",
+				"title":"网红短款牛油果绿毛衣女套头麻花时尚洋气韩版宽松慵懒风针织衫潮",
+				"cfav":5234,
+				"price":"￥39.9",
+				},
+				{"iid":"1mo7iys",
+				"img":"https://s5.mogucdn.com/mlcdn/c45406/191122_4i3fcbae064900a45h137e832d55e_3332x4999.jpg_320x999.jpg",
+				"title":"加厚加绒卫衣2019新款女韩版宽松假两件外套上衣ins潮秋冬",
+				"cfav":1,
+				"price":"￥49.9",
+				}
+				],
+			starUrl:'./star.svg',//收藏图标
+			itemcallback:itemcallback,//点击item的回调函数
+			starcallback:starcallback,//点击收藏的回调函数
+		});
+	</script>
+</html>
